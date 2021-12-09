@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -13,35 +13,11 @@ dataSources:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - AddSupportedChainId
-        - AddSwapToken
-        - Approval
-        - MigrateBridgeRole
-        - Mint
-        - RemoveSwapToken
-        - Swap
-        - Transfer
-        - Unwrap
+        - Customer
       abis:
         - name: Contract
           file: ./abis/Contract.json
       eventHandlers:
-        - event: AddSupportedChainId(uint256)
-          handler: handleAddSupportedChainId
-        - event: AddSwapToken(address,uint256)
-          handler: handleAddSwapToken
-        - event: Approval(indexed address,indexed address,uint256)
-          handler: handleApproval
-        - event: MigrateBridgeRole(address)
-          handler: handleMigrateBridgeRole
-        - event: Mint(address,uint256,address,uint256,bytes32)
-          handler: handleMint
-        - event: RemoveSwapToken(address,uint256)
-          handler: handleRemoveSwapToken
-        - event: Swap(address,uint256)
-          handler: handleSwap
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-        - event: Unwrap(uint256,uint256)
-          handler: handleUnwrap
       file: ./src/mapping.ts

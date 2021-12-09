@@ -1,5 +1,7 @@
-type ExampleEntity @entity {
+type Customer @entity {
   id: ID!
-  count: BigInt!
-  chainId: BigInt! # uint256
+  sales: BigInt!
+  revenue: BigInt! 
+  address: Bytes!
+  register_address: Bytes!
 }
